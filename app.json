@@ -21,6 +21,11 @@
         "backgroundColor": "#000000"
       },
       "package": "com.pacecalc.app"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "7bcc8ac6-bb0b-4430-9047-28e59d515580"
+      }
     }
   }
 }

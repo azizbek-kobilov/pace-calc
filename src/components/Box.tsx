@@ -27,8 +27,19 @@ export function Box({ color, dashed, onPress, style, children }: Props) {
 
   if (onPress) {
     return (
-      <Pressable onPress={onPress} style={({ pressed }) => [pressed && styles.pressed]}>
-        {content}
+      <Pressable
+        onPress={onPress}
+        style={({ pressed }) => [
+          styles.box,
+          {
+            borderColor: color,
+            borderStyle: dashed ? 'dashed' : 'solid',
+          },
+          style,
+          pressed && styles.pressed,
+        ]}
+      >
+        {children}
       </Pressable>
     );
   }

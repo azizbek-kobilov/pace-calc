@@ -146,7 +146,14 @@ function AppContent() {
                   onPress={() => selectPreset(d.miles)}
                   style={styles.presetBtn}
                 >
-                  <Text style={[styles.presetText, { color: colors.distance }]}>{d.label}</Text>
+                  <Text
+                    style={[styles.presetText, { color: colors.distance }]}
+                    numberOfLines={1}
+                    adjustsFontSizeToFit
+                    minimumFontScale={0.75}
+                  >
+                    {d.label}
+                  </Text>
                 </Box>
               ))}
             </View>
@@ -320,18 +327,20 @@ const styles = StyleSheet.create({
   },
   presetRow: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 8,
+    flexWrap: 'nowrap',
+    gap: 4,
     marginBottom: 12,
   },
   presetBtn: {
-    paddingVertical: 8,
-    paddingHorizontal: 10,
-    minWidth: 52,
+    flex: 1,
+    minWidth: 0,
+    paddingVertical: 6,
+    paddingHorizontal: 2,
   },
   presetText: {
-    fontSize: 13,
+    fontSize: 11,
     fontWeight: '500',
+    textAlign: 'center',
   },
   gap: {
     gap: 10,
@@ -360,7 +369,6 @@ const styles = StyleSheet.create({
     includeFontPadding: false,
   },
   inputWeb: {
-    outlineStyle: 'none',
     paddingHorizontal: 0,
     margin: 0,
     borderWidth: 0,
